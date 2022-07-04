@@ -86,7 +86,7 @@ class MoneyAmount
         );
     }
 
-    public function setAmount(string $amount): void
+    private function setAmount(string $amount): void
     {
         $index = 1;
 
@@ -97,7 +97,7 @@ class MoneyAmount
         }
     }
 
-    public function generateOutput(): string
+    private function generateOutput(): string
     {
         $amount = (int)implode('', array_reverse($this->amount));
         $output = $this->processTeenCases($amount);
@@ -146,7 +146,7 @@ class MoneyAmount
         return $dictionary[$key];
     }
 
-    public function processTeenCases($amount): string
+    private function processTeenCases($amount): string
     {
         $amount %= 100;
 
